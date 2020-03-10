@@ -1,4 +1,4 @@
-#Prueba tecnica INNREF
+# Prueba tecnica INNREF
 Para poder crear un objeto en alguna de las tablas se debe hacer de la siguiente manera (debido a las foreign keys):
 establecimiento -> refrigerador
 
