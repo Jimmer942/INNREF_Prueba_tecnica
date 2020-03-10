@@ -1,0 +1,25 @@
+-- Script for mysql that create the database SIIGO and multiple tables
+CREATE USER IF NOT EXISTS 'innref'@'localhost' IDENTIFIED BY 'innref';
+CREATE DATABASE IF NOT EXISTS innref;
+USE innref;
+CREATE TABLE IF NOT EXISTS establecimiento
+(
+id INT,
+conectividad BOOLEAN,
+zona VARCHAR(100),
+direccion VARCHAR(100),
+capacidad VARCHAR(100),
+CONSTRAINT establecimiento_pk PRIMARY KEY (id)
+);
+CREATE TABLE IF NOT EXISTS refrigerador
+(
+id INT,
+tipo VARCHAR(100),
+smart BOOLEAN,
+conectividad BOOLEAN,
+estado BOOLEAN,
+establecimiento_id INT,
+FOREIGN KEY (establecimiento_id) REFERENCES establecimiento(id)
+);
+GRANT ALL PRIVILEGES ON innref.* TO 'innref'@'localhost';
+FLUSH PRIVILEGES;
